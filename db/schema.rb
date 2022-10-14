@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_190406) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "total"
+    t.integer "total", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "customers_id"
@@ -56,7 +56,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_190406) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.integer "price"
+    t.integer "price", default: 0
+    t.string "code", default: "0"
     t.string "tag"
     t.string "category"
     t.datetime "created_at", null: false
